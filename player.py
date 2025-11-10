@@ -1,5 +1,39 @@
 # Define the Player class.
 class Player():
+    """
+    Cette classe représente le joueur.
+
+    Attributes:
+        name (str): Le nom du joueur.
+        current_room (Room): La salle où se trouve actuellement le joueur.
+
+    Methods:
+        __init__(self, name): Initialise un nouveau joueur.
+        move(self, direction): Déplace le joueur dans une direction donnée.
+
+    Examples:
+        
+        >>> p = Player("Joueur Test")
+        >>> salle1 = Room("Départ", "la salle de départ")
+        >>> salle2 = Room("Arrivée", "la salle d'arrivée")
+        >>> salle1.exits = {"N": salle2, "S": None}
+        >>> p.current_room = salle1
+        
+        >>> p.move("O")
+        Aucune porte dans cette direction !
+        False
+
+        >>> p.move("S")
+        Aucune porte dans cette direction !
+        False
+
+        >>> p.move("N")
+        Vous êtes dans la salle d'arrivée
+        True
+
+        >>> p.current_room.name
+        'Arrivée'
+    """
 
     # Define the constructor.
     def __init__(self, name):

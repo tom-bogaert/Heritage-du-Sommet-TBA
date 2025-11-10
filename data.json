@@ -1,0 +1,65 @@
+{
+  "start_room": "swamp",
+  "rooms": {
+    "forest": {
+      "name": "Forest",
+      "description": "une forêt enchantée. Vous entendez une brise légère à travers la cime des arbres.",
+      "exits": {
+        "N": "cave",
+        "E": "tower",
+        "S": "castle",
+        "O": null
+      }
+    },
+    "tower": {
+      "name": "Tower",
+      "description": "une immense tour en pierre qui s'élève au dessus des nuages.",
+      "exits": {
+        "N": "cottage",
+        "E": null,
+        "S": null,
+        "O": "forest"
+      }
+    },
+    "cave": {
+      "name": "Cave",
+      "description": "une grotte profonde et sombre. Des voix semblent provenir des profondeurs.",
+      "exits": {
+        "N": null,
+        "E": "cottage",
+        "S": "forest",
+        "O": null
+      }
+    },
+    "cottage": {
+      "name": "Cottage",
+      "description": "un petit chalet pittoresque avec un toit de chaume. Une épaisse fumée verte sort de la cheminée.",
+      "exits": {
+        "N": null,
+        "E": null,
+        "S": "tower",
+        "O": "cave"
+      }
+    },
+    "swamp": {
+      "name": "Swamp",
+      "description": "un marécage sombre et ténébreux. L'eau bouillonne, les abords sont vaseux.",
+      "exits": {
+        "N": "tower",
+        "E": null,
+        "S": null,
+        "O": "castle"
+      }
+    },
+    "castle": {
+      "name": "Castle",
+      "description": "un énorme château fort avec des douves et un pont levis. Sur les tours, des flèches en or massif.",
+      "exits": {
+        "N": "forest",
+        "E": "swamp",
+        "S": null,
+        "O": null
+      }
+    }
+  }
+}
