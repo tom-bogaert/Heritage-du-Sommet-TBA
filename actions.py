@@ -2,7 +2,7 @@
 
 MSG0 = "\nLa commande '{command_word}' ne prend pas de paramètre.\n"
 MSG1 = "\nLa commande '{command_word}' prend 1 seul paramètre.\n"
-liste_acceptance = ( "NORD", "SOUTH", "EST", "OUEST", "UP", "DOWN" )
+liste_acceptance = set( "NORD", "SUD", "EST", "OUEST", "UP", "DOWN")
 
 from qte import QTE
 
@@ -73,7 +73,10 @@ class Actions:
         next_room = player.current_room.exits.get(direction)
 
         if next_room is None:
-            print("\Vous ne pouvez pas aller par là !\n")
+            if direction in liste_acceptance or direction in player.current_room.exits.keys() :
+                print(f"Prendre la direction '{str([i for i in liste_acceptance if str(i).startswith(direction)][0])}' est impossible !\n")
+            else :
+                print("Cette direction '" + str(direction) + "' est inconnu !\n")
             return False
 
         player.move(direction)
